@@ -121,6 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93370804}
+  - component: {fileID: 93370806}
+  - component: {fileID: 93370805}
   m_Layer: 0
   m_Name: WeatherDisplay
   m_TagString: Untagged
@@ -149,6 +151,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93370805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93370803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3cfcf2023740d47860030a8a5e9f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textInformation: {fileID: 0}
+  weatherWidget: {fileID: 0}
+--- !u!114 &93370806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93370803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c991c881204d0844cb6bcfcdfed06bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherData:
+    weather: []
+    main:
+      temp: 0
+      feels_like: 0
+      temp_min: 0
+      temp_max: 0
+      pressure: 0
+      humidity: 0
+    id: 0
+    name: 
 --- !u!1001 &257343307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,6 +677,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c991c881204d0844cb6bcfcdfed06bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weatherData:
+    weather: []
+    main:
+      temp: 0
+      feels_like: 0
+      temp_min: 0
+      temp_max: 0
+      pressure: 0
+      humidity: 0
+    id: 0
+    name: 
 --- !u!4 &880649473
 Transform:
   m_ObjectHideFlags: 0
