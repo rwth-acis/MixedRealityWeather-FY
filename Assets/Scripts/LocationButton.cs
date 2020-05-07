@@ -7,10 +7,12 @@ using Microsoft.MixedReality.Toolkit.Input;
 public class LocationButton : MonoBehaviour, IMixedRealityPointerHandler
 {
     public TextMeshPro textMesh;
+    public WeatherController weatherController;
 
     public void OnPointerClicked(MixedRealityPointerEventData eventData)
     {
         Debug.Log(textMesh.text);
+        weatherController.LoadWeather(textMesh.text);
     }
 
     public void OnPointerDown(MixedRealityPointerEventData eventData)

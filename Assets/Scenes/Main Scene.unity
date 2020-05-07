@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121,6 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 93370804}
+  - component: {fileID: 93370806}
+  - component: {fileID: 93370805}
   m_Layer: 0
   m_Name: WeatherDisplay
   m_TagString: Untagged
@@ -147,8 +149,59 @@ Transform:
   - {fileID: 306886873}
   - {fileID: 1582186413}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &93370805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93370803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e3cfcf2023740d47860030a8a5e9f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textCity: {fileID: 2022455871}
+  textTemp: {fileID: 1662177846}
+  textDescription: {fileID: 1667910266}
+  weatherWidget: {fileID: 228305757}
+--- !u!114 &93370806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93370803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c991c881204d0844cb6bcfcdfed06bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weatherData:
+    weather: []
+    main:
+      temp: 0
+      feels_like: 0
+      temp_min: 0
+      temp_max: 0
+      pressure: 0
+      humidity: 0
+    id: 0
+    name: 
+--- !u!114 &228305757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3531550778618225354, guid: 90d8fb82acae5894ba18ca7675ba7249,
+    type: 3}
+  m_PrefabInstance: {fileID: 257343307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88429417d6c2b5d42a2882dec645ed02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &257343307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,6 +284,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -341,6 +399,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -607,8 +670,52 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &883111271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 883111273}
+  - component: {fileID: 883111272}
+  m_Layer: 0
+  m_Name: MixedRealityToolkit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &883111272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883111271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeProfile: {fileID: 11400000, guid: 31a611a779d3499e8e35f1a2018ca841, type: 2}
+--- !u!4 &883111273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883111271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1540118710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -616,6 +723,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -966,6 +1078,9 @@ GameObject:
   - component: {fileID: 1665110764}
   - component: {fileID: 1665110763}
   - component: {fileID: 1665110762}
+  - component: {fileID: 1665110767}
+  - component: {fileID: 1665110766}
+  - component: {fileID: 1665110765}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -991,7 +1106,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1003,7 +1118,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1030,13 +1145,70 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665110761}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1772807788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1665110765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665110761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf98dd1206224111a38765365e98e207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setCursorInvisibleWhenFocusLocked: 0
+  maxGazeCollisionDistance: 10
+  raycastLayerMasks:
+  - serializedVersion: 2
+    m_Bits: 4294967291
+  stabilizer:
+    storedStabilitySamples: 60
+  gazeTransform: {fileID: 0}
+  minHeadVelocityThreshold: 0.5
+  maxHeadVelocityThreshold: 2
+  useEyeTracking: 1
+--- !u!114 &1665110766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665110761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a21b486d0bb44444b1418aaa38b44de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1665110767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665110761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &1667910264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1411,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1772807787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1772807788}
+  m_Layer: 0
+  m_Name: MixedRealityPlayspace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772807788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772807787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1665110764}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1856819641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1246,6 +1449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -1356,6 +1564,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
