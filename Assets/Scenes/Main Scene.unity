@@ -163,8 +163,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3cfcf2023740d47860030a8a5e9f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textInformation: {fileID: 0}
-  weatherWidget: {fileID: 0}
+  textCity: {fileID: 2022455871}
+  textTemp: {fileID: 1662177846}
+  textDescription: {fileID: 1667910266}
+  weatherWidget: {fileID: 228305757}
 --- !u!114 &93370806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +190,18 @@ MonoBehaviour:
       humidity: 0
     id: 0
     name: 
+--- !u!114 &228305757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3531550778618225354, guid: 90d8fb82acae5894ba18ca7675ba7249,
+    type: 3}
+  m_PrefabInstance: {fileID: 257343307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88429417d6c2b5d42a2882dec645ed02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &257343307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +284,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -380,6 +399,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -648,60 +672,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &880649471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 880649473}
-  - component: {fileID: 880649472}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &880649472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880649471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c991c881204d0844cb6bcfcdfed06bb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weatherData:
-    weather: []
-    main:
-      temp: 0
-      feels_like: 0
-      temp_min: 0
-      temp_max: 0
-      pressure: 0
-      humidity: 0
-    id: 0
-    name: 
---- !u!4 &880649473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880649471}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2797162, y: -5.168744, z: 13.324507}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &883111271
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +723,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -1474,6 +1449,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
@@ -1584,6 +1564,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 93370804}
     m_Modifications:
+    - target: {fileID: 3570233506812861363, guid: 2fbcae66dbf02cc40b265030029a7bed,
+        type: 3}
+      propertyPath: weatherController
+      value: 
+      objectReference: {fileID: 93370805}
     - target: {fileID: 4879846609649769961, guid: 2fbcae66dbf02cc40b265030029a7bed,
         type: 3}
       propertyPath: m_Mesh
