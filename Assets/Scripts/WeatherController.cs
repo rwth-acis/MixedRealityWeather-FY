@@ -12,7 +12,9 @@ public class WeatherController : MonoBehaviour
     //By Felix Voigtländer 07.05.2020
     //Look up Links
 
-    public TextMeshPro textInformation;
+    public TextMeshPro textCity;
+    public TextMeshPro textTemp;
+    public TextMeshPro textDescription;
     public WeatherWidget weatherWidget;
 
 
@@ -28,15 +30,19 @@ public class WeatherController : MonoBehaviour
 
     public async Task LoadWeather(string cityName)
     {
+        //Reseting Weather Text:
+        //Write WeatherData
+        textCity.text = textTemp.text = textDescription.text = "...";
+
         //Fetch WeatherData
         WeatherData weatherData = await weatherQuery.FetchWeatherData(cityName);
-        int code = weatherData.weather[0].id;
+        if (weatherData == null)
+        {
+            Debug.LogError("WeatherData is null!");
+            return;
+        }
 
-        //Write WeatherData
-        string s = "";
-        s += "Temperatur: " + weatherData.main.temp + "\n";
-        s += "min: " + weatherData.main.temp_min + "  max: " + weatherData.main.temp_max + "\n";
-        textInformation.text = s;
+        int code = weatherData.weather[0].id;
 
         //Assign Weatherscene
         WeatherScene weatherScene = CodeToWeather(code);
@@ -55,6 +61,11 @@ public class WeatherController : MonoBehaviour
         float snowIntensity = CodeToSnowIntensity(code);
         weatherWidget.CloudSnow.RainEnabled = snowIntensity > 0;
         weatherWidget.CloudSnow.RainRate = snowIntensity;
+
+        //Write WeatherData
+        textCity.text = weatherData.name;
+        textTemp.text = weatherData.main.temp + "F";
+        textDescription.text = weatherScene.ToString();
 
 
     }
@@ -105,6 +116,8 @@ public class WeatherController : MonoBehaviour
         return 0f;
     }
 
+    //Returns first digit of i : 
+    // if i is 2140124989 the int 2 is returned
     public int GetFirstDigit(int i)
     {
         while (i >= 10)
