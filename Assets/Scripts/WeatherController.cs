@@ -64,7 +64,7 @@ public class WeatherController : MonoBehaviour
 
         //Write WeatherData
         textCity.text = weatherData.name;
-        textTemp.text = weatherData.main.temp + "F";
+        textTemp.text = weatherData.main.temp + "°C";
         textDescription.text = weatherScene.ToString();
 
 
