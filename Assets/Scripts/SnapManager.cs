@@ -13,14 +13,13 @@ public class SnapManager : MonoBehaviour
         speechInputHandler = GetComponent<SpeechInputHandler>();
         solverHandler = GetComponent<SolverHandler>();
 
-        //speechInputHandler.AddResponse("Snap", ToggleSnap);
+        speechInputHandler.AddResponse("Snap", ToggleSnap);
         
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-            ToggleSnap();
+        
 
     }
 
