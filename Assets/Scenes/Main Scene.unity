@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 490052381}
   - component: {fileID: 490052384}
   - component: {fileID: 490052383}
+  - component: {fileID: 490052385}
   m_Layer: 0
   m_Name: BoundingBox
   m_TagString: Untagged
@@ -676,6 +677,20 @@ MonoBehaviour:
   onHoverExited:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &490052385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490052379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fd3c08bbd19a04483f994efe77fd86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundingBox: {fileID: 0}
+  boxCollider: {fileID: 0}
 --- !u!1 &711247593
 GameObject:
   m_ObjectHideFlags: 0
