@@ -30,7 +30,7 @@ public class WeatherQuery : MonoBehaviour
         string apiKey = "16fb128280d16cd1acdeed497976a523";
 
         //HTTP Fetch
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", cityName, apiKey));
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format("http://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}&units=metric", cityName, apiKey));
         HttpWebResponse response = (HttpWebResponse)(await request.GetResponseAsync());
 
         //Parse to Json String
