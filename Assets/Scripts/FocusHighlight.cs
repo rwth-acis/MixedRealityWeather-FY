@@ -14,12 +14,6 @@ public class FocusHighlight : MonoBehaviour, IMixedRealityFocusHandler
         defaultColor = backgroundRenderer.material.color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnFocusEnter(FocusEventData eventData)
     {
         backgroundRenderer.material.color = focusColor;

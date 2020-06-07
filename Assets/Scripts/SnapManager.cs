@@ -17,15 +17,8 @@ public class SnapManager : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        
-
-    }
-
     public void ToggleSnap()
     {
-        print("Snap Toggled");
         solverHandler.enabled = !solverHandler.enabled;
     }
 }

@@ -26,16 +26,4 @@ public class LocationButton : MonoBehaviour, IMixedRealityPointerHandler
     public void OnPointerUp(MixedRealityPointerEventData eventData)
     {
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

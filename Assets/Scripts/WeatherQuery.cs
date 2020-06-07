@@ -19,13 +19,11 @@ public class WeatherQuery : MonoBehaviour
     public WeatherData weatherData;
     private async Task Start()
     {
-        print("Weather test");
         weatherData = await FetchWeatherData("Sydney");
     }
 
     public async Task<WeatherData> FetchWeatherData(string cityName)
     {
-        print("Starting to Fetch");
         // Request Information
         string apiKey = "16fb128280d16cd1acdeed497976a523";
 
